@@ -33,7 +33,7 @@ jobs:
           --path=./clusters/staging
       - name: Verify tenant reconciliation
         run: |
-          kubectl -n apps wait helmrelease/podinfo --for=condition=ready --timeout=1m
+          kubectl -n podinfo wait helmrelease/podinfo --for=condition=ready --timeout=1m
       - name: List reconciliations
         run: |
           flux get all --all-namespaces
