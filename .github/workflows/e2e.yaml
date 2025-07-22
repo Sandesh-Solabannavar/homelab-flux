@@ -43,9 +43,5 @@ jobs:
           kubectl -n flux-system get all
           kubectl -n flux-system logs deploy/source-controller
           kubectl -n flux-system logs deploy/kustomize-controller
-          kubectl -n kyverno get all
-          kubectl -n kyverno describe po 
-          kubectl -n kyverno logs -l app.kubernetes.io/part-of=kyverno
-          kubectl get clusterpolicies.kyverno.io -oyaml
           flux get sources all --all-namespaces
           flux get ks --all-namespaces
