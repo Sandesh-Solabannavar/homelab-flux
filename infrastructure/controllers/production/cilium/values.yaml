@@ -1,7 +1,7 @@
 ipam:
   mode: kubernetes
 
-kubeProxyReplacement: true
+kubeProxyReplacement: strict
 
 securityContext:
   capabilities:
@@ -28,7 +28,7 @@ cgroup:
   hostRoot: /sys/fs/cgroup
 
 k8sServiceHost: localhost
-k8sServicePort: 7445
+k8sServicePort: 6443
 
 hubble:
   relay:
@@ -42,9 +42,6 @@ hubble:
 
 l2announcements:
   enabled: true
-
-# Calculated based on 30 services
-# https://docs.cilium.io/en/latest/network/l2-announcements/#sizing-client-rate-limit
 
 k8sClientRateLimit:
   qps: 15
